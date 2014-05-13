@@ -23,17 +23,26 @@ $(function(){
 	// Вверх
 	$(top).on('click', function(event){
 		event.preventDefault();
+
+		var posisition = $(document).scrollTop();
+		var scrollTime = posisition / 0.2;
+
 		$(body).animate({
-			'scrollTop':0,
-		}, 2000);
+			'scrollTop': 0,
+		}, scrollTime);
 	});
 
 	// Вниз
 	$(bottom).on('click', function(event){
 		event.preventDefault();
+
+		var posisition = $(document).scrollTop();
+		var scrollTime = (height - posisition) / 0.2;
+
 		$(body).animate({
 			'scrollTop': height,
-		}, 2000);
+		}, scrollTime);
+
 	});
 
 	// Стоп
