@@ -58,6 +58,14 @@ body{
     -webkit-border-radius: 3px;
     border-radius: 3px;
 }
+#scroll-block .top-window > a,
+#scroll-block .bottom-window > a{
+	background-color: rgb(209, 209, 209);
+}
+#scroll-block .top-window > a:hover,
+#scroll-block .bottom-window > a:hover{
+	background-color: rgb(209, 209, 209);
+}
 .scroll-top a{
 	background: url(../img/icons.png) 4px -2px no-repeat;
 }
