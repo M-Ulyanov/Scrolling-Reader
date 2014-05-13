@@ -46,4 +46,29 @@ body{
 	right: 0;
 }
 
+#scroll-block span > a{
+	text-indent: -9999px;
+	height: 24px;
+	width: 24px;
+	display: block;
+	margin-bottom: 5px;
+	padding: 5px;
+	background-color: rgb(42, 138, 202);
+	-moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+.scroll-top a{
+	background: url(../img/icons.png) 4px -2px no-repeat;
+}
+.scroll-stop a{
+	background: url(../img/icons.png) 4px -77px no-repeat;
+}
+.scroll-bottom a{
+	background: url(../img/icons.png) 4px -36px no-repeat;
+}
+#scroll-block span > a:hover{
+	background-color: rgb(76, 172, 236);
+}
+
 
