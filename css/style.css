@@ -1,0 +1,49 @@
+/*Reset*/
+*{
+	margin:0;
+	padding:0;
+}
+ul{
+    list-style: none;
+}
+h1, h2, h3, h4, h5, h6{
+    font-weight: normal;
+}
+input,select,option, img{
+	outline:0;
+	border:0;
+}
+a{
+    text-decoration: none;
+}
+
+/*General*/
+body{
+	background: #f7f7f7;
+	font-family: Arial, sans-serif;
+	color: rgb(26, 98, 126)
+}
+#wrapper{
+	width: 960px;
+	margin: 20px auto;
+}
+#content{
+	width: 300px;
+	margin: 0 auto;
+	padding: 20px;
+	border: 5px solid #FFF;
+	background: rgb(241, 241, 241);
+}
+#content p{
+	margin-bottom: 15px;
+}
+
+
+/*Style Script*/
+#scroll-block{
+	position: fixed;
+	top:100px;
+	right: 0;
+}
+
+
