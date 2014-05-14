@@ -10,7 +10,7 @@ $(function(){
 	block = $('<div id="scroll-block">'),
 	top = $('<span class="scroll-top"><a href="#">top</a></span>'),
 	stop = $('<span class="scroll-stop"><a href="#">stop</a></span>'),
-	settings = $('<span class="scroll-settings"><a href="#"></a><span class="wrap-input"><span class="settings-text">Скорость скролла:</span><input type="text"><button type="button">Готово</button></span></span>'),
+	settings = $('<span class="scroll-settings"><a href="#"></a><span class="wrap-input"><span class="settings-text">Скорость скролла:</span><input type="text" value="200"><button class="new-speed" type="button">Готово</button></span></span>'),
 	bottom = $('<span class="scroll-bottom"><a href="#">bottom</a></span>');
 
 	// Вставка элементов
@@ -18,16 +18,30 @@ $(function(){
 	$(body).append(block);
 
 	// Добавление классов
-	$(top).addClass('top-window');	
+	$(top).addClass('top-window');
+
+	// Расчет
+	var speedScroll = parseFloat($('.scroll-settings .wrap-input').find('input[type="text"]').val());
+	speedScroll /= 1000;
+
+	//2
+	$('.new-speed').on('click', function(){
+		speedScroll = parseFloat($(this).siblings('input[type="text"]').val());
+		speedScroll /= 1000;
+		$(this).parent('.wrap-input').animate({
+			opacity: 0,
+		});	
+
+	});
 
 	// Вверх
 	$(top).on('click', function(event){
 		event.preventDefault();
 
 		var posisition = $(document).scrollTop();
-		var scrollTime = posisition / 0.2;
+		var scrollTime = posisition / speedScroll;
 
-		$(body).animate({
+		$(body).stop().animate({
 			'scrollTop': 0,
 		}, scrollTime);
 	});
@@ -37,7 +51,7 @@ $(function(){
 		event.preventDefault();
 
 		var posisition = $(document).scrollTop();
-		var scrollTime = (height - posisition) / 0.2;
+		var scrollTime = (height - posisition) / speedScroll;
 
 		$(body).animate({
 			'scrollTop': height,
@@ -86,10 +100,9 @@ $(function(){
 	});
 
 	// Блок настроек
-
 	$('.wrap-input').css({
 		opacity: 0,
 		position: 'absolute',
-	})
+	});
 
 });
