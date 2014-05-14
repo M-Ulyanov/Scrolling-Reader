@@ -114,6 +114,10 @@ body{
 	border: none;
 	cursor: pointer;
 }
+.wrap-input button:hover{
+	color: #FFF;
+	background-color: #222;
+}
 .wrap-input:after, .wrap-input:before {
 	left: 100%;
 	top: 57%;
