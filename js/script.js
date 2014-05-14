@@ -10,7 +10,7 @@ $(function(){
 	block = $('<div id="scroll-block">'),
 	top = $('<span class="scroll-top"><a href="#">top</a></span>'),
 	stop = $('<span class="scroll-stop"><a href="#">stop</a></span>'),
-	settings = $('<span class="scroll-settings"></span>'),
+	settings = $('<span class="scroll-settings"><a href="#"></a><span class="wrap-input"><span class="settings-text">Скорость скролла:</span><input type="text"><button type="button">Готово</button></span></span>'),
 	bottom = $('<span class="scroll-bottom"><a href="#">bottom</a></span>');
 
 	// Вставка элементов
@@ -51,8 +51,17 @@ $(function(){
 		$(body).stop();
 	});
 
+	// Настройки 
+
+	$('.scroll-settings > a').on('click', function(event){
+		event.preventDefault();
+		$(this).parent().find('.wrap-input').animate({
+			opacity: 1,
+		})		
+	});
+
 	// Отмена
-	$(body).on('scroll mousedown mousewheel keyup', function(){
+	$(body).on('scroll mousewheel', function(){
 		$(body).stop();
 	});
 
@@ -75,5 +84,12 @@ $(function(){
 		}
 
 	});
+
+	// Блок настроек
+
+	$('.wrap-input').css({
+		opacity: 0,
+		position: 'absolute',
+	})
 
 });
