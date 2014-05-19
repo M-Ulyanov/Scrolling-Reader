@@ -20,20 +20,6 @@ $(function(){
 	// Добавление классов
 	$(top).addClass('top-window');
 
-	// Расчет
-	var speedScroll = parseFloat($('.scroll-settings .wrap-input').find('input[type="text"]').val());
-	speedScroll /= 1000;
-
-	//2
-	$('.new-speed').on('click', function(){
-		speedScroll = parseFloat($(this).siblings('input[type="text"]').val());
-		speedScroll /= 1000;
-		$(this).parent('.wrap-input').animate({
-			opacity: 0,
-		});	
-
-	});
-
 	// Вверх
 	$(top).on('click', function(event){
 		event.preventDefault();
@@ -41,7 +27,7 @@ $(function(){
 		var posisition = $(document).scrollTop();
 		var scrollTime = posisition / speedScroll;
 
-		$(body).stop().animate({
+		$('html, body').stop().animate({
 			'scrollTop': 0,
 		}, scrollTime);
 	});
@@ -53,7 +39,7 @@ $(function(){
 		var posisition = $(document).scrollTop();
 		var scrollTime = (height - posisition) / speedScroll;
 
-		$(body).animate({
+		$('html, body').animate({
 			'scrollTop': height,
 		}, scrollTime);
 
@@ -62,11 +48,10 @@ $(function(){
 	// Стоп
 	$(stop).on('click', function(event){
 		event.preventDefault();
-		$(body).stop();
+		$('html, body').stop();
 	});
 
 	// Настройки 
-
 	$('.scroll-settings > a').on('click', function(event){
 		event.preventDefault();
 		$(this).parent().find('.wrap-input').animate({
@@ -74,9 +59,28 @@ $(function(){
 		})		
 	});
 
+	// Запрет ввода чисел
+	$('.wrap-input input[type="text"]').on('keypress input change', function(event){
+		if(event.charCode < 48 || event.charCode > 57) return false;
+	})
+
+	// Расчет
+	var speedScroll = parseFloat($('.scroll-settings .wrap-input').find('input[type="text"]').val());
+	speedScroll /= 1000;
+
+	// Расчет и закрытие
+	$('.new-speed').on('click', function(){
+		speedScroll = parseFloat($(this).siblings('input[type="text"]').val());
+		speedScroll /= 1000;
+		$(this).parent('.wrap-input').animate({
+			opacity: 0,
+		});	
+
+	});
+
 	// Отмена
-	$(body).on('scroll mousewheel', function(){
-		$(body).stop();
+	$(body).on('scroll mousewheel mousedown', function(){
+		$('html, body').stop();
 	});
 
 	// Поведение кнопок
