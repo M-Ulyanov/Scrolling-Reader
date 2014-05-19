@@ -12,7 +12,7 @@ $(function(){
 	stop = $('<span class="scroll-stop"><a href="#">stop</a></span>'),
 	settings = $('<span class="scroll-settings"><a href="#"></a><span class="wrap-input"><span class="settings-text">Скорость скролла:</span><input type="text" value="200"><button class="new-speed" type="button">Готово</button></span></span>'),
 	bottom = $('<span class="scroll-bottom"><a href="#">bottom</a></span>'),
-	info = $('<span class="scroll-info"><a href="#"></a><span class="wrap-text"><strong>Scrolling-Reader</strong><br>Автор и разработчик<a target="_blank" href="#">M.Ulyanov</a><br><strong>Информация:</strong><br>Для изменения скорости скроллинга нажмите на иконки с настройками, задайте скорость, после чего переопределите направление скроллинга!Все!</span></span>');
+	info = $('<span class="scroll-info"><a href="#"></a><span class="wrap-text"><strong>Scrolling-Reader</strong><br>Автор идеи и разработчик<a target="_blank" href="https://github.com/M-Ulyanov">M.Ulyanov</a><br><strong>Информация:</strong><br>Для изменения скорости скроллинга нажмите на иконку с настройками, задайте скорость, после чего переопределите направление скроллинга!Все!<span class="close-text"><a href="#">Закрыть</a></span></span></span>');
 
 	// Вставка элементов
 	$(block).append(top, stop, settings, bottom, info);
