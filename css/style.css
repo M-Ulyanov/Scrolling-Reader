@@ -91,8 +91,8 @@ body{
 .wrap-input,
 .wrap-text{
 	width: 130px;
-	top: -60px;
-	right: 20px;
+	top: -58px;
+	right: 16px;
 	padding: 10px;
 	background: rgb(76, 172, 236);
 	border: 3px solid rgb(42, 138, 202);
@@ -159,8 +159,8 @@ body{
 	margin-bottom: 5px;
 }
 .wrap-text{
-	width: 300px;
-	top: 75px;
+	width: 320px;
+	top: 71px;
 	right: 50px;
 	color: #222;
 }

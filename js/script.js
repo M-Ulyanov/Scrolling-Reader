@@ -73,7 +73,9 @@ $(function(){
 	speedScroll /= 1000;
 
 	// Расчет и закрытие
-	$('.new-speed').on('click', function(){
+	$('.new-speed').on('click', function(event){
+		event.preventDefault();
+
 		speedScroll = parseFloat($(this).siblings('input[type="text"]').val());
 		speedScroll /= 1000;
 		$(this).parent('.wrap-input').fadeOut(400);
@@ -91,7 +93,9 @@ $(function(){
 		$(this).parent().find('.wrap-text').fadeIn(500);
 	});
 
-	$('.close-text a').on('click', function(){
+	$('.close-text a').on('click', function(event){
+		event.preventDefault();
+		
 		$(this).parents('.wrap-text').hide();
 	});
 
