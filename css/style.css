@@ -46,7 +46,7 @@ body{
 	right: 0;
 }
 
-#scroll-block span > a{
+#scroll-block > span > a{
 	text-indent: -9999px;
 	height: 24px;
 	width: 24px;
@@ -79,13 +79,17 @@ body{
 .scroll-settings a{
 	background: url(../img/icons.png) 5px -116px no-repeat;
 }
+.scroll-info > a{
+	background: url(../img/icons.png) 5px -149px no-repeat;
+}
 #scroll-block span > a:hover{
 	background-color: rgb(76, 172, 236);
 }
 .scroll-settings{
 	position: relative;
 }
-.wrap-input{
+.wrap-input,
+.wrap-text{
 	width: 130px;
 	top: -60px;
 	right: 20px;
@@ -118,7 +122,10 @@ body{
 	color: #FFF;
 	background-color: #222;
 }
-.wrap-input:after, .wrap-input:before {
+.wrap-input:after,
+.wrap-input:before,
+.wrap-text:after,
+.wrap-text:before{
 	left: 100%;
 	top: 57%;
 	border: solid transparent;
@@ -128,13 +135,15 @@ body{
 	position: absolute;
 	pointer-events: none;
 }
-.wrap-input:after {
+.wrap-input:after,
+.wrap-text:after{
 	border-color: rgba(136, 183, 213, 0);
 	border-left-color: rgb(76, 172, 236);
 	border-width: 7px;
 	margin-top: -11px;
 }
-.wrap-input:before {
+.wrap-input:before,
+.wrap-text:before{
 	border-color: rgba(194, 225, 245, 0);
 	border-left-color: rgb(42, 138, 202);
 	border-width: 12px;
@@ -146,5 +155,10 @@ body{
 	font-size: 14px;
 	color: #222;
 	margin-bottom: 5px;
+}
+.wrap-text{
+	width: 300px;
+	top: 75px;
+	right: 50px;
 }
 

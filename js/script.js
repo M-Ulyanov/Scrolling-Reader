@@ -11,10 +11,11 @@ $(function(){
 	top = $('<span class="scroll-top"><a href="#">top</a></span>'),
 	stop = $('<span class="scroll-stop"><a href="#">stop</a></span>'),
 	settings = $('<span class="scroll-settings"><a href="#"></a><span class="wrap-input"><span class="settings-text">Скорость скролла:</span><input type="text" value="200"><button class="new-speed" type="button">Готово</button></span></span>'),
-	bottom = $('<span class="scroll-bottom"><a href="#">bottom</a></span>');
+	bottom = $('<span class="scroll-bottom"><a href="#">bottom</a></span>'),
+	info = $('<span class="scroll-info"><a href="#"></a><span class="wrap-text"><strong>Scrolling-Reader</strong><br>Автор и разработчик<a target="_blank" href="#">M.Ulyanov</a><br><strong>Информация:</strong><br>Для изменения скорости скроллинга нажмите на иконки с настройками, задайте скорость, после чего переопределите направление скроллинга!Все!</span></span>');
 
 	// Вставка элементов
-	$(block).append(top, stop, settings, bottom);
+	$(block).append(top, stop, settings, bottom, info);
 	$(body).append(block);
 
 	// Добавление классов
@@ -54,9 +55,12 @@ $(function(){
 	// Настройки 
 	$('.scroll-settings > a').on('click', function(event){
 		event.preventDefault();
-		$(this).parent().find('.wrap-input').animate({
-			opacity: 1,
-		})		
+
+		if($('.wrap-text').is(':visible')){
+			$('.wrap-text').hide();
+		}
+
+		$(this).parent().find('.wrap-input').fadeIn(500);
 	});
 
 	// Запрет ввода чисел
@@ -72,10 +76,19 @@ $(function(){
 	$('.new-speed').on('click', function(){
 		speedScroll = parseFloat($(this).siblings('input[type="text"]').val());
 		speedScroll /= 1000;
-		$(this).parent('.wrap-input').animate({
-			opacity: 0,
-		});	
+		$(this).parent('.wrap-input').fadeOut(400);
 
+	});
+
+	// Информация 
+	$('.scroll-info > a').on('click', function(event){
+		event.preventDefault();
+
+		if($('.wrap-input').is(':visible')){
+			$('.wrap-input').hide();
+		}
+
+		$(this).parent().find('.wrap-text').fadeIn(500);
 	});
 
 	// Отмена
@@ -103,10 +116,11 @@ $(function(){
 
 	});
 
-	// Блок настроек
-	$('.wrap-input').css({
-		opacity: 0,
+	// Блок настроек и информации
+	$('.wrap-input, .wrap-text').css({
+		display: 'none',
 		position: 'absolute',
 	});
+
 
 });
