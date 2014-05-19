@@ -91,6 +91,10 @@ $(function(){
 		$(this).parent().find('.wrap-text').fadeIn(500);
 	});
 
+	$('.close-text a').on('click', function(){
+		$(this).parents('.wrap-text').hide();
+	});
+
 	// Отмена
 	$(body).on('scroll mousewheel mousedown', function(){
 		$('html, body').stop();
