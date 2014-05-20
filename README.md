@@ -16,8 +16,8 @@ Scrolling-Reader
 ##Кроссбраузерность
 
 - IE8+ и все современные браузеры
-- Проверяется
+- Мобильные устройства
 
 ##Пример работы
 
-Можно посмотреть <a href="exe">Здесь</a>
+Можно посмотреть <a href="http://example.web-ulyanov.ru/frontend/scrolling-reader/">Здесь</a>
